@@ -9,6 +9,7 @@ const Lists = () => {
       id: 1,
       event: "Football UZ",
       date: "11/21/2023",
+      location: "Tashkent",
     },
   ]);
 
@@ -24,6 +25,9 @@ const Lists = () => {
           </p>
           <p>
             <b>Date:</b> {el.date}
+          </p>
+          <p>
+            <b>Location:</b> {el.location}
           </p>
         </div>
       ))}

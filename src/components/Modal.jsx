@@ -1,38 +1,40 @@
-import React, { useState } from "react";
+import { useRef } from "react";
 import modal from "./Modal.module.css";
 import uuid4 from "uuid4";
 
-
 const Modal = ({ isShowContent, setIsShowContent, royxat, setRoyxat }) => {
-  const [event, setEvent] = useState("");
-  const [date, setDate] = useState("");
-
+  // const [event, setEvent] = useState("");
+  // const [date, setDate] = useState("");
+  // const [location, setLocation] = useState("karshi");
+  const event = useRef("");
+  const date = useRef("");
+  const location = useRef("Tashkent");
+  // console.log(event.current.value);
+  // console.log("rendering.....");
   const handleCloseModal = () => {
     setIsShowContent((prev) => !prev);
   };
-
+  // console.log(location);
   const newEvent = {
     id: uuid4(),
-    event: event,
-    date: date,
+    event: event.current.value,
+    date: date.current.value,
+    location: location.current.value,
   };
 
-  const handleEvent = (e) => {
-    setEvent(e.target.value);
+  const resetInputs = () => {
+    // setEvent("");
+    // setDate("");
+    event.current.value = "";
+    date.current.value = "";
   };
-
-  const handleDate = (e) => {
-    setDate(e.target.value);
-  };
-
   const onSubmit = (e) => {
     e.preventDefault();
-    if (event && date) {
+    if (newEvent.event && newEvent.date) {
       setRoyxat([...royxat, newEvent]);
       setIsShowContent((prev) => !prev);
-      setEvent("");
-      setDate("");
-      console.log(newEvent);
+      resetInputs();
+      // console.log(newEvent);
     } else {
       console.log("iltimos tolfiring");
     }
@@ -50,18 +52,28 @@ const Modal = ({ isShowContent, setIsShowContent, royxat, setRoyxat }) => {
                 type="text"
                 name="event"
                 placeholder="Type Event"
-                value={event}
-                onChange={handleEvent}
+                // value={event}
+                // onChange={() => event.current.value}
+                ref={event}
                 required
               />
               <input
                 type="date"
                 name="date"
                 placeholder="Type Date"
-                value={date}
-                onChange={handleDate}
+                // value={date}
+                // onChange={() => date.current.value}
+                ref={date}
                 required
               />
+              <select
+                // onChange={() => location.current.value}
+                ref={location}
+              >
+                <option value="Tashkent">Tashkent</option>
+                <option value="Karshi">Karshi</option>
+                <option value="Bukhara">Bukhara</option>
+              </select>
               <button onClick={onSubmit}>Add</button>
             </form>
           </div>
