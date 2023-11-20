@@ -1,0 +1,17 @@
+.title {
+  padding: 10px;
+  color: orange;
+  width: 100%;
+}
+
+.title h2 {
+    font-size: 30px;
+}
+
+.list {
+    background-color: orange;
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
