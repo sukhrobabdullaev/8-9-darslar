@@ -1,8 +1,6 @@
-# React + Vite
+# React + Vite (CRUD)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ushbu darsda umumiy React uchun CRUD mexanizimini qo'llab ko'rdik.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [YouTube video](https://youtu.be/GlG-CRrkNnQ?si=I_wukFul0dfxsdJQ)
+- [React course roadmap](https://docs.google.com/document/d/1o2_6G560r3SWoJC5UC-p4X9E1V0L78YuQOqhUI1V88A/edit)
